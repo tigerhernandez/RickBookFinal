@@ -25,6 +25,12 @@ body {
     background-image: url("../../resources/images/reg.png");
     background-size:100% 100%;
 }
+
+.big-banner4 {
+    background-image: url("../../resources/images/today.jpg");
+    background-size:100% 100%;
+}
+
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
     display: block
 }

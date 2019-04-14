@@ -24,17 +24,10 @@
     <![endif]-->
 </head>
 <body>
-<div class="jumbotron big-banner2" style="height:1000px; padding-top:150px;"> 
+<div class="jumbotron big-banner4" style="height:1000px; padding-top:150px;"> 
 <div class="container">
-
-    <c:if test="${pageContext.request.userPrincipal.name != null}">
-        <form id="logoutForm" method="POST" action="${contextPath}/logout">
-            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-        </form>
         
-        <h2>Welcome ${pageContext.request.userPrincipal.name} | <a href="${contextPath}/post"> Check Your Posts Here! </a> | <a onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
-
-    </c:if>
+        <h2>Thanks ${pageContext.request.userPrincipal.name}  | <a onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
 
 </div>
     </div>

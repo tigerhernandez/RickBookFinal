@@ -60,4 +60,9 @@ public class UserController {
     public String welcome(Model model) {
         return "welcome";
     }
+    
+    @RequestMapping(value = {"/", "/post"}, method = RequestMethod.GET)
+    public String post(Model model) {
+        return "post";
+    }
 }
