@@ -1,0 +1,20 @@
+--DROP TABLE POST;
+
+CREATE TABLE POSTS(
+post_id int primary key generated always as identity, 
+post_content varchar(250), 
+time_of_post TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
+
+
+jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://us-cdbr-iron-east-02.cleardb.net:3306/heroku_e8926131408769e?zeroDateTimeBehavior=convertToNull
+jdbc.username=b75c3c2e717636
+jdbc.password=bb8bf3d8
+#HOST NAME FOR STARTING THE DB = us-cdbr-iron-east-02.cleardb.net
+
+Nobody exists on purpose. Nobody belongs anywhere. We're all going to die. Come watch TV
+Rise above. Focus on science
+Weddings are basically funerals with cake	
+What about the reality where Hitler cured cancer, Morty? The answer is: Don't think about it	
+You're young, you have your whole life ahead of you, and your anal cavity is still taut yet malleable	

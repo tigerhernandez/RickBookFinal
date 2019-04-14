@@ -31,12 +31,17 @@ import javax.ws.rs.Produces;
 @ApplicationScoped
 public class PostREST {
     
-//    @PersistenceContext(unitName = "rickBook")
+    @PersistenceContext(unitName = "com.rickbook_account_war_1.0-SNAPSHOTPU")
     private EntityManager em;
     
     @Inject
     private UserTransaction transaction;
     
+    // http://localhost:8080/TestDB/api/post
+    /**
+     * Uses a JPA Query to return the entire list as JSON.
+     * @return List of Posts
+     */
     @GET
     @Produces({"application/json"})
     public List<Post> getAll() {
@@ -46,22 +51,22 @@ public class PostREST {
 
     /**
      * Uses a JPA Named Query to return a specific entity as a list.
-     * @param id the Product Code (ID)
+     * @param id the Post (ID)
      * @return 
      */
-//    @GET
-//    @Path("{id}")
-//    @Produces({"application/json"})
-//    public List<Post> getOne(@PathParam("id") String id) {
-//        Query q = em.createNamedQuery("findPost");
-//        q.setParameter("post", id);
-//        List<Post> post = q.getResultList();
-//        return post;
-//    }
+    @GET
+    @Path("{id}")
+    @Produces({"application/json"})
+    public List<Post> getOne(@PathParam("id") int id) {
+        Query p = em.createNamedQuery("findPost");
+        p.setParameter("postId", id);
+        List<Post> post = p.getResultList();
+        return post;
+    }
 
     /**
      * Saves an object received as a JSON payload.
-     * @param productCode 
+     * @param post 
      */
     @POST
     @Consumes("application/json")
@@ -77,7 +82,7 @@ public class PostREST {
 
     /**
      * Updates an existing Product Code based on an incoming JSON payload.
-     * @param productCode
+     * @param post
      * @param id 
      */
     @PUT
@@ -85,7 +90,7 @@ public class PostREST {
     @Consumes("application/json")
     public void editOne(Post post, @PathParam("id") String id) {
         try {
-            Query p = em.createQuery("SELECT p FROM ProductCode p WHERE p.prodCode = :id");
+            Query p = em.createQuery("SELECT p FROM Post p WHERE p.postId = :id");
             p.setParameter("id", id);
             Post savedP = (Post) p.getSingleResult();
             savedP.setPostContent(post.getPostContent());

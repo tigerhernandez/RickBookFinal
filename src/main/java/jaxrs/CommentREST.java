@@ -19,21 +19,21 @@ import javax.ws.rs.Produces;
  *
  * @author c0592682
  */
-@Path("post")
-@ApplicationScoped
+//@Path("post")
+//@ApplicationScoped
 public class CommentREST {
     
 //    @PersistenceContext(unitName = "rickAndMorty")
-    private EntityManager em;
-    
-    @Inject
-    private UserTransaction transaction;
-    
-    @GET
-    @Produces({"application/json"})
-    public List<Comment> getAll() {
-        List<Comment> comment = em.createQuery("SELECT c FROM Comment c").getResultList();
-        return comment;
-    }
+//    private EntityManager em;
+//    
+//    @Inject
+//    private UserTransaction transaction;
+//    
+//    @GET
+//    @Produces({"application/json"})
+//    public List<Comment> getAll() {
+//        List<Comment> comment = em.createQuery("SELECT c FROM Comment c").getResultList();
+//        return comment;
+//    }
     
 }

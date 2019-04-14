@@ -16,32 +16,32 @@ import javax.persistence.Table;
  *
  * @author c0592682
  */
-@NamedQueries (
-    @NamedQuery(name = "findComment", query = "SELECT c FROM User WHERE c.postId = :postId"))
-@Entity
-@Table(name = "COMMENT")
+//@NamedQueries (
+//    @NamedQuery(name = "findComment", query = "SELECT c FROM User WHERE c.postId = :postId"))
+//@Entity
+//@Table(name = "COMMENT")
 public class Comment {
-     @Id
-    @Column(name = "POST_ID")
-    private String postId;
-     @Column(name = "REPLY")
-    private String reply;
-
-    public String getPostId() {
-        return postId;
-    }
-
-    public void setPostId(String postId) {
-        this.postId = postId;
-    }
-
-    public String getReply() {
-        return reply;
-    }
-
-    public void setReply(String reply) {
-        this.reply = reply;
-    }
-     
-     
+//     @Id
+//    @Column(name = "POST_ID")
+//    private String postId;
+//     @Column(name = "REPLY")
+//    private String reply;
+//
+//    public String getPostId() {
+//        return postId;
+//    }
+//
+//    public void setPostId(String postId) {
+//        this.postId = postId;
+//    }
+//
+//    public String getReply() {
+//        return reply;
+//    }
+//
+//    public void setReply(String reply) {
+//        this.reply = reply;
+//    }
+//     
+//     
 }

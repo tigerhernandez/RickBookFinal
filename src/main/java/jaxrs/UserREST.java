@@ -21,24 +21,24 @@ import javax.ws.rs.Produces;
  *
  * @author c0592682
  */
-@Path("post")
-@ApplicationScoped
+//@Path("post")
+//@ApplicationScoped
 public class UserREST {
     
 //     @PersistenceContext(unitName = "rickAndMorty")
-    private EntityManager em;
-    
-    @Inject
-    private UserTransaction transaction;
-    
-    @GET
-    @Path("{id}")
-    @Produces({"application/json"})
-    public List<Post> getOne(@PathParam("id") String id) {
-        Query p = em.createQuery("findUser");
-        p.setParameter("prodCode", id);
-        List<Post> post = p.getResultList();
-        return post;
-    }
+//    private EntityManager em;
+//    
+//    @Inject
+//    private UserTransaction transaction;
+//    
+//    @GET
+//    @Path("{id}")
+//    @Produces({"application/json"})
+//    public List<Post> getOne(@PathParam("id") String id) {
+//        Query p = em.createQuery("findUser");
+//        p.setParameter("prodCode", id);
+//        List<Post> post = p.getResultList();
+//        return post;
+//    }
     
 }
